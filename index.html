@@ -107,10 +107,10 @@
           var canvas2 = document.getElementById('myCanvas2'); // second canvas created
           var context2 = canvas2.getContext("2d"); // must create context var for canvas to be noticed by webpage, must go pass 2d
           
-          var imageData = context.getImageData(0, 0, 500, 500); // dimensions craeted based off last app
+          var imageData = context.getImageData(0, 0, 600, 500); // dimensions craeted based off canvas 1
           var data = imageData.data; // symbolizes data of the pixels of the canvas area
          
-          for(var i =0, data.length; i < n; i += 4) { // this changes the image from canvas 1 to blue onto canvas 2
+          for(var i = 0, data.length; i < n; i += 4) { // this changes the image from canvas 1 to blue onto canvas 2
            
            // following data is to set other intensities to 0 so blue is showcased in canvas 2
             data[i] = 0; // sets green to 0 so blue is showcased
@@ -157,14 +157,13 @@
         context.fillText("Original image will go here", 10, 20); // position of image that user submits on canvas 1
       </script>
 
-     <canvas id="myCanvas2" width="500" height="500" style="border:1px solid #000000;"></canvas> <!-- creates a border, got from app 6 but modified to canvas 2 -->
+     <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!-- creates a border, got from app 6 but modified to canvas 2 -->
      <script>
       var canvas2 = document.getElementById('myCanvas2'); // got from app6, modifed for canvas 2; calls canvas2 to canvas
       var context2 = canvas2.getContext("2d"); // context for canvas2
       context2.font = '20pt Calibri'; // sets font for canvas2
       context2.fillStyle = "black"; // sets color for text for canvas2
       context2.fillText("blue image will go here", 10, 20); // position of the blue image 
-     
      
      
      
