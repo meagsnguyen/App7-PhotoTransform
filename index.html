@@ -98,15 +98,23 @@
           /*This finally draws the image onto the first drawing canvas. The specific canvas is referred to by "context". This is established down in the HTML part of the file just under the first <canvas> tag. If we weren't worried about fixing an iPhone bug we would use context.drawImage(image, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500) instead of drawImageIOSFix */
         
           drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
-
+   
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
+          var canvas2 = document.getElementById('myCanvas2'); // second canvas created
+          var context2 = canvas2.getContext("2d"); // must create context var for canvas to be noticed by webpage, must go pass 2d
           
-          
-          
+          var imageData = context.getImageData(0, 0, 500, 500); // dimensions craeted based off last app
+          var data = imageData.data; // symbolizes data of the pixels of the canvas area
+         
+          for(var i =0, data.length; i < n; i += 4) { // this changes the image from canvas 1 to blue onto canvas 2
+           
+           // following data is to set other intensities to 0 so blue is showcased in canvas 2
+            data[i] = 0; // sets green to 0 so blue is showcased
+            data [i + 1] = 0; // sets red to 0 so blue is showcased
         } // end of img.onload
         
         img.src = reader.result;
