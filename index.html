@@ -27,9 +27,11 @@
   Load a picture that uses the camer feature of your phone or the file system of your computer to load an image onto a canvas element
  
   Known Issues:
-  - 
-  -
-  -
+  - adding the correct variables
+  - having certain coding elements such as script, }, and etc
+  - knowing where coding segments are in the code
+  - identifying between canvas1 and canvas2 when created canvas2
+  - learning the new code
 -->
 
  <head>
@@ -81,16 +83,20 @@
  window.onload = function() {
   var fileInput = document.getElementById('fileInput');
   var messageDisplayArea = document.getElementById('messageDisplayArea');
+  
+  
   /* fileInput.addEventListener looks for any change in the <input> tag indicating that the user has selected a file (picture). */
   fileInput.addEventListener('change', function(e) {
     var file = fileInput.files[0];
     var imageType = /image.*/;
+   
     /* if (file.type.match(imageType)) checks that the selected file is indeed an image. */
     if (file.type.match(imageType)) {
       /* new FileReader(); and reader.onload start some kind of file reading process in javaScript. I do not understand why this is necessary although it may simply slow things down to let the image load. */
       var reader = new FileReader();
       reader.onload = function(e) {
-        /* messageDisplayArea.innerHTML not needed but allows you to send a message at this point in the program. */
+        
+       /* messageDisplayArea.innerHTML not needed but allows you to send a message at this point in the program. */
         messageDisplayArea.innerHTML = "You picked an image!";
         /* new Image() and img.onload start some kind of new image creation process in javaScript. I do not understand why this is necessary although it may simply slow things down to let the image load. */
         var img = new Image();
@@ -139,11 +145,11 @@
  <body>
   <div data-role="page">
     <div data-role="header">
-    <h1>Primary Colors</h1></div><!-- /header -->
+    <h1>Primary Colors</h1></div> <!-- /header; lets user know topic -->
     <div data-role="content">	
-      <h2>Push button to take picture.</h2>
+      <h2>Push button to take picture.</h2> <!-- /header; lets user know how to work system -->
       <div>
-        Press orange button to create or choose image file:
+        Press orange button to create or choose image file: <!-- this loads the file that user chose onto canvas -->
         <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
       </div>
       <div id="messageDisplayArea"></div>
