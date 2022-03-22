@@ -115,8 +115,12 @@
            // following data is to set other intensities to 0 so blue is showcased in canvas 2
             data[i] = 0; // sets green to 0 so blue is showcased
             data [i + 1] = 0; // sets red to 0 so blue is showcased
+          }
+         
+         context2.putImageData(imageData, 0, 0); // functions created will be noticed by webpage, so it will be showcased onto canvas 2
         } // end of img.onload
         
+         
         img.src = reader.result;
       } //  end of reader.onload
       
