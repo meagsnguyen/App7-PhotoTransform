@@ -110,7 +110,7 @@
           var imageData = context.getImageData(0, 0, 600, 500); // dimensions craeted based off canvas 1
           var data = imageData.data; // symbolizes data of the pixels of the canvas area
          
-          for(var i = 0, data.length; i < n; i += 4) { // this changes the image from canvas 1 to blue onto canvas 2
+           for(var i = 0, n = data.length; i < n; i += 4) { // this changes the image from canvas 1 to blue onto canvas 2
            
            // following data is to set other intensities to 0 so blue is showcased in canvas 2
             data[i] = 0; // sets green to 0 so blue is showcased
