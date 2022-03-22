@@ -150,17 +150,21 @@
       
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
-        context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
+        var canvas = document.getElementById('myCanvas'); //calls canvas1 sand saves to var
+        var context = canvas.getContext("2d"); // context for canvas1 for webpage
+        context.font = '20pt Calibri'; // sets font for canvas1
+        context.fillStyle = "black"; // sets color of texts for canvas 1
+        context.fillText("Original image will go here", 10, 20); // position of image that user submits on canvas 1
       </script>
 
      <canvas id="myCanvas2" width="500" height="500" style="border:1px solid #000000;"></canvas> <!-- creates a border, got from app 6 but modified to canvas 2 -->
      <script>
       var canvas2 = document.getElementById('myCanvas2'); // got from app6, modifed for canvas 2; calls canvas2 to canvas
       var context2 = canvas2.getContext("2d"); // context for canvas2
+      context2.font = '20pt Calibri'; // sets font for canvas2
+      context2.fillStyle = "black"; // sets color for text for canvas2
+      context2.fillText("blue image will go here", 10, 20); // position of the blue image 
+     
      
      
      
